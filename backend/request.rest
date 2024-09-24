@@ -1,0 +1,57 @@
+###
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "email":"anasmaruff@gmail.com",
+    "username":"anasmaruff",
+    "password":"password",
+    "confPassword":"password"
+}
+
+###
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email":"anasmaruf@gmail.com",
+    "password":"password"
+}
+
+###
+POST http://localhost:3000/api/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYXNtYXJ1ZkBnbWFpbC5jb20iLCJwYXNzd29yZCI6InBhc3N3b3JkIiwiaWF0IjoxNzE0NjE4Nzg5LCJleHAiOjE3MTQ2MTk2ODl9.sIakpav_iFyX6g3w5Zrhb9yAzTAbCk-Pmo5NHM2KYUQ
+
+{
+    "name":"Product 1",
+    "price":4000,
+    "description":"test"
+}
+###
+curl -X POST http://localhost:3000/api/products \
+ -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYXNtYXJ1ZkBnbWFpbC5jb20iLCJwYXNzd29yZCI6InBhc3N3b3JkIiwiaWF0IjoxNzE3MjMzMDc4LCJleHAiOjE3MTcyMzM5Nzh9.yFu8VW4hpwrqwU2E-4_HM-w5wNIW3sgTMRqDMXo_aBw" \
+  -H "Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYXNtYXJ1ZkBnbWFpbC5jb20iLCJwYXNzd29yZCI6InBhc3N3b3JkIiwiaWF0IjoxNzE3MjMzMDc4LCJleHAiOjE3MTczMTk0Nzh9.UfXM0eoziBGk0mYL77fQVDn2iA0IXDpKwrYbNBwhfUw" \
+  -H "Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW" \
+  -F "image=@/C:/Users/ANAS%20MARUF/Pictures/Asset%20Web/Picture3.jpg" \
+  -F "name=Product Name" \
+  -F "price=100" \
+  -F "description=Product Description"
+
+
+###
+GET http://localhost:3000/api/token
+
+###
+GET http://localhost:3000/refresh
+
+###
+DELETE http://localhost:3000/api/users/logout
+
+###
+GET http://localhost:3000/api/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYXNtYXJ1ZkBnbWFpbC5jb20iLCJwYXNzd29yZCI6InBhc3N3b3JkIiwiaWF0IjoxNzEzNDk1ODU1LCJleHAiOjE3MTM1ODIyNTV9.bBHbFnjm1yz35g6We_eBEwkRlqKyPX6FXDsM08EXOAs
+
+###
+GET http://localhost:3000/api/products?search_query=product&page=0&limit=10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYXNtYXJ1ZkBnbWFpbC5jb20iLCJwYXNzd29yZCI6InBhc3N3b3JkIiwiaWF0IjoxNzEzNTEzMTExLCJleHAiOjE3MTM1MTQwMTF9.3gqSZ5bFkf3q06ByGzerIlP5SSM48ApOvs_HMa52K9c
